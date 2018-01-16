@@ -2,11 +2,11 @@
 
 [![Build status][badge]][travis]
 
-[travis]: https://travis-ci.org/SquareBracketAssociates/Booklet-PublishingAPillarBooklet
-[badge]: https://travis-ci.org/SquareBracketAssociates/Booklet-PublishingAPillarBooklet.svg?branch=master
+[travis]: https://travis-ci.org/pavel-krivanek/pillarPlayground
+[badge]: https://travis-ci.org/pavel-krivanek/pillarPlayground.svg?branch=master
 
 
-The result from the latest successful Travis build can be found [on Bintray (PDF)](https://bintray.com/squarebracketassociates/wip/download_file?file_path=DistributingPillar-wip.pdf).
+The result from the latest successful Travis build can be found [on Bintray (PDF)](https://bintray.com/pavel-krivanek/wip/download_file?file_path=DistributingPillar-wip.pdf).
 
 ## To contribute
 - Fork
