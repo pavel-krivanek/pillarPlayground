@@ -1,0 +1,18 @@
+sudo: required
+services:
+- docker
+before_install:
+- docker pull dpollet/texlive:pillar
+script: |
+  docker run --tty --rm --volume $PWD:/work dpollet/texlive:pillar bash -c "\
+    wget --quiet --output-document=- 'https://raw.githubusercontent.com/pillar-markup/pillar/master/download.sh' | bash \
+    && make spiralbook "
+deploy:
+- provider: bintray
+  file: ".bintray.json"
+  on:
+    repo: pavel-krivanek/pillarPlayground
+  skip_cleanup: true
+  user: pavel-krivanek
+  key:
+    secure: jGBCX7oA9uAi26eXnu/iz2jowQBVaCzDl9Wo4auT+cjjwBKEGkMLnXH7OpT/Fj+GD8RiO3LAKCjKgE2nPfcb13o9bYz/z+tddzDbz4FJMp77gc/ULY9fnwsCAcBT7RoGi5d1B7TXntFCHosxC4d465PKsJ718C4iNOFkYTT9vyQKFUhXff7q2x7AJ1ZDLlB5XWB968i21chYLuOgfhpLLf5vuHY775Omqh+RQZFUwWJMaFqsCjuTmjcGZW8GSOEYCGI90CufVEX8ytKIW+FS+e2NAu4pDZC62POEBXgivfqhBmOuyV7Kle/59JDJXNgCKk8lSsc8Oi+Nnakka2qcWCk5oMAioej03nsm4i03/RPhREMSLo+NylADjRKQduDRsXjC7tJp8bcVURfcf6tDWuaf7tywBsja7Fh+r5ankGpwlOfYtjKO7Ck6TW2Wu1My0m1vPJ2R15gu4BUCIzDkb5uMrgZlvkXnV73wZuylvcU5Msa5PT/4yXQC+mDfFP3d7ZqYDlQP6J4n8zF4v1Sj53BC0cKdcVCDfd2LGeRgcQiKqp+tNhaRbO8b4hf2xgK42veFYHuaDZzFmnaTsTU9WTkoFZ0LQb3JwyCSiMLVn2x7LavtT42+gDzx/XLMQmPrvFi0XVWiDKuX/oe55skKLd0JzzLkomC4Rgp+FOLeH54=
